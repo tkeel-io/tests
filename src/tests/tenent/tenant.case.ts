@@ -1,4 +1,4 @@
-import { ironMan, request, keel } from "../init";
+import { ironMan, request, keel } from "../init.case";
 
 test("creat teanat", (done) => {
   request
@@ -14,3 +14,5 @@ test("creat teanat", (done) => {
     .set("authorization", ironMan.authorization)
     .expect(200, done);
 });
+
+export const tenantCase  = `tenant 模块的测试用例`
