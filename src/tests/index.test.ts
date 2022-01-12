@@ -10,7 +10,6 @@ import { keelLoginCase } from "./keel/keel-login.case";
 
 it("index", () => {
   // console.log(process.env);
-  console.log(jest);
   console.log(keelCase);
   console.log(keelLoginCase);
   console.log(tenantCase);
