@@ -7,21 +7,20 @@
 - npm
 - node.js
 
-bash`
+```bash
 git clone git@github.com:tkeel-io/tests.git
 cd tests
 npm install
-
-`
+```
 
 ## 运行测试
 
-bash`
+```bash
 // 运行所有用例 npm run test
 
 // 运行模块用例
 npm run test /tests/keel
-`
+```
 
 ## 用例组织
 
