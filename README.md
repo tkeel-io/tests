@@ -19,7 +19,7 @@ npm install
 // 运行所有用例 npm run test
 
 // 运行模块用例
-npm run test /tests/keel
+npm run test /tests/<模块名>
 ```
 
 ## 用例组织
