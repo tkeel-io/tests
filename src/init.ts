@@ -5,10 +5,10 @@
  * 3、存储token
  */
 
-import { adminPassword, baseURL, ironMan, keel } from "./data/data";
+import { adminPassword, baseURL, ironMan } from "../tests/data";
 
 const st = require("supertest");
-const request = st(baseURL);
+export const request = st(baseURL);
 
 /**
  * 登录平台
@@ -24,5 +24,3 @@ it("login", (done) => {
       done();
     });
 });
-
-export { ironMan, keel, request };

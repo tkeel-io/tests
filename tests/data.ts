@@ -7,6 +7,11 @@
 
 import { v4 as uuidv4 } from "uuid";
 
+// 全局依赖数据
+export const ironMan: any = {
+  authorization: "平台管理员登录用的token",
+};
+
 // 测试环境
 export const service = "http://192.168.123.9";
 export const adminPassword = "Y2hhbmdlbWU=";
@@ -20,11 +25,6 @@ export const installerVersion = "0.3.0";
 export const pluginId = "hello-tkeel";
 export const entityId = uuidv4();
 export const entityType = "device";
-
-// 存储临时依赖数据
-export const ironMan: any = {
-  authorization: "平台管理员登录用的token",
-};
 
 // keel 模块测试数据
 export const keel = {

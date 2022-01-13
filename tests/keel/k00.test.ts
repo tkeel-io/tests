@@ -1,4 +1,5 @@
-import { ironMan, request, keel } from "../init.case";
+import { request } from "../../src/init";
+import { ironMan, keel } from "../data";
 
 /**
  * 添加平台仓库
@@ -20,5 +21,3 @@ it("get repo info", (done) => {
     .set("authorization", ironMan.authorization)
     .expect(200, done);
 });
-
-export const keelCase = `keel 模块的测试用例`;
