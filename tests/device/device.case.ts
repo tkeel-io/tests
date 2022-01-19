@@ -241,7 +241,7 @@ test("update device ext", (done) => {
   console.log("update device ext", device.updateDeviceExtInfo);
   request
     .put(`/apis/tkeel-device/v1/devices/${device.devicesInfo.dev1Id}/ext`)
-    .send(device.addDeviceExtInfo)
+    .send(device.updateDeviceExtInfo)
     .set("authorization", device.tenantInfo.tenantAuthorization)
     .expect(200)
     .then((res: any) => {

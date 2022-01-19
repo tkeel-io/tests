@@ -77,7 +77,7 @@ export const getGroupListInfo: any = {
 
 export function getDelGroupInfo (){
     return {
-      ids: [groupsInfo["dev2Id"], groupsInfo["dev3Id"]],
+      ids: [groupsInfo["group2Id"], groupsInfo["group3Id"]],
     };
 } 
 
@@ -89,7 +89,6 @@ export const addGroupExtInfo: any = {
 export const updateGroupExtInfo: any = {
       price:"1001",
       matrix:"tenet",
-      new:"new",
 };
 
 export const deleteGroupExtInfo: any = {
