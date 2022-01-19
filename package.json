@@ -17,7 +17,7 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "build": "tsc"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
   },
   "jest": {
     "verbose": true,
-    "testTimeout": 500000,
+    "testTimeout": 20000,
     "reporters": [
       "default",
       [

@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 // 全局依赖数据
 export const ironMan: any = {
   authorization: "平台管理员登录用的token",
+  tenantAuthorization: "平台管理员登录用的token",
 };
 
 // 测试环境
