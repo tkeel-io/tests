@@ -11,9 +11,7 @@ export const tenantInfo: any = {
 };
 
 export function getTenantToken (){
-    return {
-      tenantToken : tenantInfo["tenantAuthorization"],
-    };
+    return tenantInfo["tenantAuthorization"];
 } 
 
 export const devicesInfo: any = {
@@ -115,7 +113,6 @@ export const addDeviceExtInfo: any = {
 export const updateDeviceExtInfo: any = {
       price:"1001",
       matrix:"tenet",
-      new:"new",
 };
 
 export const deleteDeviceExtInfo: any = {
