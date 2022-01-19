@@ -3,6 +3,9 @@ import { ironMan, keel } from "../data";
 import * as device from "./device_data";
 import * as group from "./group_data";
 
+
+
+export const groupCase = 'this is groupCase'
 /**
  * 创建设备组1
  */
@@ -10,7 +13,7 @@ it("creat group", (done) => {
   console.log("create group ",group.createGroupInfo1)
   console.log("tenants token =", device.getTenantToken())
   request
-    .post(`/apis/tkeel-device/v1/gropus`)
+    .post(`/apis/tkeel-device/v1/groups`)
     .send(group.createGroupInfo1)
     .set("authorization",device.getTenantToken())
     .expect(200)
