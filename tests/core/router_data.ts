@@ -1,4 +1,4 @@
-const prefix:string = "/apis"
+const prefix:string = "/apis/core/v1"
 export const routerData = {
     "createEntity": {
         "method": "post",
@@ -12,8 +12,8 @@ export const routerData = {
         "method": "get",
         "url": prefix + "/entities/:id",
     },
-    "listEntities": {
-        "method": "get",
+    "searchEntities": {
+        "method": "post",
         "url": prefix + "/entities/search",
     },
     "updateEntity": {
@@ -31,5 +31,21 @@ export const routerData = {
     "setConfig": {
         "method": "post",
         "url": prefix + "/entities/:id/configs"
-    }
+    },
+    "patchConfig": {
+        "method": "post",
+        "url": prefix + "/entities/:id/configs/patch"
+    },
+    "appendConfig": {
+        "method": "put",
+        "url": prefix + "/entities/:id/configs"
+    },
+    "queryConfig": {
+        "method": "get",
+        "url": prefix + "/entities/:id/configs"
+    },
+    "removeConfig": {
+        "method": "delete",
+        "url": prefix + "/entities/:id/configs/:key"
+    },
 }

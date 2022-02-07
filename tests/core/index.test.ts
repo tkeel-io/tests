@@ -1,5 +1,5 @@
-import { entityCase } from "./entity.case";
+import { entityTest } from "./entity.test";
 
 it("index", () => {
-  console.log(entityCase);
+  console.log(entityTest);
 });

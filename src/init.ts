@@ -20,7 +20,7 @@ it("login", (done) => {
     .then((res: any) => {
       let result = JSON.parse(res.text).data;
       let authorization = `${result.token_type} ${result.access_token}`;
-      ironMan["authorization"] = authorization;
+      ironMan.authorization = authorization;
       done();
     });
 });

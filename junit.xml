@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest-junit-suite" tests="39" failures="30" errors="0" time="54.415">
+  <testsuite name="undefined" errors="0" failures="15" skipped="0" timestamp="2022-02-07T10:48:58" time="27.509" tests="20">
+    <testcase classname=" login" name=" login" time="0.279">
+    </testcase>
+    <testcase classname=" createEntity" name=" createEntity" time="0.433">
+    </testcase>
+    <testcase classname=" getEntity" name=" getEntity" time="0.302">
+    </testcase>
+    <testcase classname=" searchEntity" name=" searchEntity" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 1
+Received: undefined
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:73:32)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:63:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)</failure>
+    </testcase>
+    <testcase classname=" updateEntity" name=" updateEntity" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;key\&quot;:\&quot;new_value\&quot;}&quot;
+Received: &quot;{\&quot;key\&quot;:\&quot;value\&quot;}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:99:53)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:84:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)</failure>
+    </testcase>
+    <testcase classname=" patchEntity" name=" patchEntity" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;key\&quot;:\&quot;replace_value\&quot;}&quot;
+Received: &quot;{\&quot;key\&quot;:\&quot;new_value\&quot;}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:125:53)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:107:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)</failure>
+    </testcase>
+    <testcase classname=" setConfig" name=" setConfig" time="0.744">
+      <failure>Error: expected 200 &quot;OK&quot;, got 500 &quot;Internal Server Error&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:144:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:25:3)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname="patchConfig append_cpu_used" name="patchConfig append_cpu_used" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;cpu_used\&quot;,\&quot;operator\&quot;:\&quot;replace\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0,\&quot;ext\&quot;:{\&quot;test\&quot;:123}},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:178:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:160:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove_cpu_used" name="patchConfig remove_cpu_used" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:200:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:182:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig append_metrics_mem_used" name="patchConfig append_metrics_mem_used" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:222:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:204:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig copy_metrics_mem_used" name="patchConfig copy_metrics_mem_used" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;copy\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;metrics.mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:244:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:226:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove_metrics_mem_used" name="patchConfig remove_metrics_mem_used" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:266:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:248:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig make_path_if_not_exist" name="patchConfig make_path_if_not_exist" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.pathnotfound.ttt\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:288:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:270:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig add_root_config" name="patchConfig add_root_config" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;root2.pathnotfound.xxx\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:310:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:292:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove" name="patchConfig remove" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;root2.pathnotfound.ttt\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:332:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:314:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)</failure>
+    </testcase>
+    <testcase classname=" appendConfig" name=" appendConfig" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;id\&quot;:\&quot;temp\&quot;,\&quot;type\&quot;:\&quot;int\&quot;,\&quot;define\&quot;:{\&quot;unit\&quot;:\&quot;°\&quot;,\&quot;max\&quot;:500,\&quot;min\&quot;:10},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230947962,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230957658,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230951566,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230959623,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;temp\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:500,\&quot;min\&quot;:10,\&quot;unit\&quot;:\&quot;°\&quot;},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;temp\&quot;,\&quot;last_time\&quot;:0,\&quot;type\&quot;:\&quot;int\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:358:50)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:341:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at Runtime.requireModuleOrMock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1210:21)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/index.test.ts:1:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)</failure>
+    </testcase>
+    <testcase classname=" queryConfig" name=" queryConfig" time="0.295">
+      <failure>Error: expected 200 &quot;OK&quot;, got 404 &quot;Not Found&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:378:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:25:3)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname=" removeConfig" name=" removeConfig" time="0.305">
+      <failure>Error: expected 200 &quot;OK&quot;, got 404 &quot;Not Found&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:404:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname=" deleteEntity" name=" deleteEntity" time="0.256">
+    </testcase>
+    <testcase classname=" index" name=" index" time="0.021">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="15" skipped="0" timestamp="2022-02-07T10:49:26" time="26.769" tests="19">
+    <testcase classname=" login" name=" login" time="0.285">
+    </testcase>
+    <testcase classname=" createEntity" name=" createEntity" time="0.215">
+    </testcase>
+    <testcase classname=" getEntity" name=" getEntity" time="0.518">
+    </testcase>
+    <testcase classname=" searchEntity" name=" searchEntity" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 1
+Received: undefined
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:73:32)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:63:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/runJest.js:404:19)</failure>
+    </testcase>
+    <testcase classname=" updateEntity" name=" updateEntity" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;key\&quot;:\&quot;new_value\&quot;}&quot;
+Received: &quot;{\&quot;key\&quot;:\&quot;value\&quot;}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:99:53)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:84:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/runJest.js:404:19)</failure>
+    </testcase>
+    <testcase classname=" patchEntity" name=" patchEntity" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;key\&quot;:\&quot;replace_value\&quot;}&quot;
+Received: &quot;{\&quot;key\&quot;:\&quot;new_value\&quot;}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:125:53)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:107:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/runJest.js:404:19)</failure>
+    </testcase>
+    <testcase classname=" setConfig" name=" setConfig" time="0.336">
+      <failure>Error: expected 200 &quot;OK&quot;, got 500 &quot;Internal Server Error&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:144:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:25:3)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname="patchConfig append_cpu_used" name="patchConfig append_cpu_used" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;cpu_used\&quot;,\&quot;operator\&quot;:\&quot;replace\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0,\&quot;ext\&quot;:{\&quot;test\&quot;:123}},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230974455,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:178:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:160:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove_cpu_used" name="patchConfig remove_cpu_used" time="2.002">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230974455,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:200:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:182:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig append_metrics_mem_used" name="patchConfig append_metrics_mem_used" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230974455,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:222:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:204:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig copy_metrics_mem_used" name="patchConfig copy_metrics_mem_used" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;copy\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230974455,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;metrics.mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:244:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:226:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove_metrics_mem_used" name="patchConfig remove_metrics_mem_used" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.mem_used\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230974455,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:266:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:248:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig make_path_if_not_exist" name="patchConfig make_path_if_not_exist" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;metrics.pathnotfound.ttt\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230983873,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:288:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:270:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig add_root_config" name="patchConfig add_root_config" time="2">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;root2.pathnotfound.xxx\&quot;,\&quot;operator\&quot;:\&quot;add\&quot;,\&quot;value\&quot;:{\&quot;type\&quot;:\&quot;float\&quot;,\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230983873,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:310:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:292:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname="patchConfig remove" name="patchConfig remove" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;path\&quot;:\&quot;root2.pathnotfound.ttt\&quot;,\&quot;operator\&quot;:\&quot;remove\&quot;}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230983873,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230987937,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:332:54)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at /Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:314:5
+    at _dispatchDescribe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:97:26)
+    at describe (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/index.js:60:5)
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:159:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)</failure>
+    </testcase>
+    <testcase classname=" appendConfig" name=" appendConfig" time="2.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;{\&quot;type\&quot;:\&quot;BASIC\&quot;,\&quot;owner\&quot;:\&quot;entity_owner\&quot;,\&quot;source\&quot;:\&quot;entity_source\&quot;,\&quot;content\&quot;:[{\&quot;id\&quot;:\&quot;temp\&quot;,\&quot;type\&quot;:\&quot;int\&quot;,\&quot;define\&quot;:{\&quot;unit\&quot;:\&quot;°\&quot;,\&quot;max\&quot;:500,\&quot;min\&quot;:10},\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true}]}&quot;
+Received: &quot;{\&quot;cpu_used\&quot;:{\&quot;define\&quot;:{\&quot;ext\&quot;:{\&quot;test\&quot;:123},\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;cpu_used\&quot;,\&quot;last_time\&quot;:1644230983873,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;metrics\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;mem_used\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;mem_used\&quot;,\&quot;last_time\&quot;:1644230987937,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0},\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;ttt\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;ttt\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230984433,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;metrics\&quot;,\&quot;last_time\&quot;:1644230978267,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;root2\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;pathnotfound\&quot;:{\&quot;define\&quot;:{\&quot;fields\&quot;:{\&quot;xxx\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:1,\&quot;min\&quot;:0},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;xxx\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;float\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;pathnotfound\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0}}},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:true,\&quot;id\&quot;:\&quot;root2\&quot;,\&quot;last_time\&quot;:1644230986492,\&quot;type\&quot;:\&quot;struct\&quot;,\&quot;weight\&quot;:0},\&quot;temp\&quot;:{\&quot;define\&quot;:{\&quot;max\&quot;:500,\&quot;min\&quot;:10,\&quot;unit\&quot;:\&quot;°\&quot;},\&quot;description\&quot;:\&quot;\&quot;,\&quot;enabled\&quot;:true,\&quot;enabled_search\&quot;:true,\&quot;enabled_time_series\&quot;:false,\&quot;id\&quot;:\&quot;temp\&quot;,\&quot;last_time\&quot;:0,\&quot;type\&quot;:\&quot;int\&quot;,\&quot;weight\&quot;:0}}&quot;
+    at Test.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:358:50)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:172:8)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:895:12)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.emit (node:domain:486:12)
+    at Unzip.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/unzip.js:54:12)
+    at Unzip.emit (node:events:327:20)</failure>
+      <failure>Error: thrown: &quot;Exceeded timeout of 2000 ms for a test.
+Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test.&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:341:1)
+    at Runtime._execModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1646:24)
+    at Runtime._loadModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1185:12)
+    at Runtime.requireModule (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runtime/build/index.js:1009:12)
+    at jestAdapter (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:13)
+    at runTestInternal (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:389:16)
+    at runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/runTest.js:475:34)
+    at TestRunner.runTests (/Users/alexkung/Work/tkeel/tests/node_modules/jest-runner/build/index.js:101:12)
+    at TestScheduler.scheduleTests (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/TestScheduler.js:333:13)
+    at runJest (/Users/alexkung/Work/tkeel/tests/node_modules/@jest/core/build/runJest.js:404:19)</failure>
+    </testcase>
+    <testcase classname=" queryConfig" name=" queryConfig" time="0.223">
+      <failure>Error: expected 200 &quot;OK&quot;, got 404 &quot;Not Found&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:378:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+    at run (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:25:3)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname=" removeConfig" name=" removeConfig" time="0.443">
+      <failure>Error: expected 200 &quot;OK&quot;, got 404 &quot;Not Found&quot;
+    at Object.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/tests/core/entity.test.ts:404:10)
+    at Promise.then.completed (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:381:26)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/utils.js:316:10)
+    at _callCircusTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)
+    at _runTest (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:155:3)
+    at _runTestsForDescribeBlock (/Users/alexkung/Work/tkeel/tests/node_modules/jest-circus/build/run.js:66:9)
+----
+    at Test._assertStatus (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:252:14)
+    at /Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:306:17
+    at Test._assertFunction (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:285:13)
+    at Test.assert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:164:23)
+    at localAssert (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:120:14)
+    at fn (/Users/alexkung/Work/tkeel/tests/node_modules/supertest/lib/test.js:125:7)
+    at Test.callback (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:907:3)
+    at IncomingMessage.&lt;anonymous&gt; (/Users/alexkung/Work/tkeel/tests/node_modules/superagent/src/node/index.js:1137:18)
+    at Stream.emit (node:events:327:20)
+    at Stream.EventEmitter.emit (node:domain:486:12)</failure>
+    </testcase>
+    <testcase classname=" deleteEntity" name=" deleteEntity" time="0.353">
+    </testcase>
+  </testsuite>
+</testsuites>
