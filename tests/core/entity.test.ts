@@ -1,5 +1,5 @@
 import {ironMan, keel} from "../data";
-import {routerData} from "./router_data";
+import {entityRouters} from "./router_data";
 import {request} from "../../src/init";
 import {entity_data, implicateID} from "./enetity_data";
 
@@ -12,7 +12,7 @@ const _none_url = "http://localhost"
  */
 it("createEntity",(done) => {
     let createUrl = new URL(_none_url)
-    createUrl.pathname = routerData.createEntity.url
+    createUrl.pathname = entityRouters.createEntity.url
     createUrl.searchParams.append("id", entity_data.create_properties.id)
     let u = createUrl.toString().replace(_none_url, "")
     request.post(u)
@@ -42,7 +42,7 @@ it("createEntity",(done) => {
  * Get Entity
  */
 it("getEntity", (done) => {
-    request.get(implicateID(routerData.getEntity.url))
+    request.get(implicateID(entityRouters.getEntity.url))
         .set("authorization", ironMan.authorization)
         .send()
         .expect(200)
@@ -61,7 +61,7 @@ it("getEntity", (done) => {
  * Search Entity
  */
 it("searchEntity", (done) => {
-    request.post(routerData.searchEntities.url)
+    request.post(entityRouters.searchEntities.url)
         .set("authorization", ironMan.authorization)
         .send(entity_data.search_type.request)
         .expect(200)
@@ -82,7 +82,7 @@ it("searchEntity", (done) => {
  * Update Entity
  */
 it("updateEntity", (done) => {
-    request.put(implicateID(routerData.updateEntity.url))
+    request.put(implicateID(entityRouters.updateEntity.url))
         .set("authorization", ironMan.authorization)
         .set("Owner", entity_data.update_properties.owner)
         .set("Type", entity_data.update_properties.type)
@@ -105,7 +105,7 @@ it("updateEntity", (done) => {
  * Patch Entity
  */
 it("patchEntity", (done) => {
-    request.patch(implicateID(routerData.patchEntity.url))
+    request.patch(implicateID(entityRouters.patchEntity.url))
         .set("Owner", entity_data.update_properties.owner)
         .set("Type", entity_data.update_properties.type)
         .set("Source", entity_data.update_properties.source)
@@ -132,7 +132,7 @@ it("patchEntity", (done) => {
  */
 it("setConfig", (done) => {
     let setUrl = new URL(_none_url)
-    setUrl.pathname = routerData.setConfig.url
+    setUrl.pathname = entityRouters.setConfig.url
     setUrl.searchParams.append("type", entity_data.set_config.type)
     setUrl.searchParams.append("owner", entity_data.set_config.owner)
     setUrl.searchParams.append("source", entity_data.set_config.source)
@@ -159,7 +159,7 @@ it("setConfig", (done) => {
 describe("patchConfig", ()=>{
     it("append_cpu_used", (done) => {
         let appendCpuUsedUrl = new URL(_none_url)
-        appendCpuUsedUrl.pathname = routerData.patchConfig.url
+        appendCpuUsedUrl.pathname = entityRouters.patchConfig.url
         appendCpuUsedUrl.searchParams.append("type", entity_data.patch_config.append_cpu_used.type)
         appendCpuUsedUrl.searchParams.append("owner", entity_data.patch_config.append_cpu_used.owner)
         appendCpuUsedUrl.searchParams.append("source", entity_data.patch_config.append_cpu_used.source)
@@ -181,7 +181,7 @@ describe("patchConfig", ()=>{
     })
     it("remove_cpu_used", (done) => {
         let removeCpuUsedUrl = new URL(_none_url)
-        removeCpuUsedUrl.pathname = routerData.patchConfig.url
+        removeCpuUsedUrl.pathname = entityRouters.patchConfig.url
         removeCpuUsedUrl.searchParams.append("type", entity_data.patch_config.remove_cpu_used.type)
         removeCpuUsedUrl.searchParams.append("owner", entity_data.patch_config.remove_cpu_used.owner)
         removeCpuUsedUrl.searchParams.append("source", entity_data.patch_config.remove_cpu_used.source)
@@ -203,7 +203,7 @@ describe("patchConfig", ()=>{
     })
     it("append_metrics_mem_used", (done) => {
         let appendMetricsMemUsedUrl = new URL(_none_url)
-        appendMetricsMemUsedUrl.pathname = routerData.patchConfig.url
+        appendMetricsMemUsedUrl.pathname = entityRouters.patchConfig.url
         appendMetricsMemUsedUrl.searchParams.append("type", entity_data.patch_config.append_metrics_mem_used.type)
         appendMetricsMemUsedUrl.searchParams.append("owner", entity_data.patch_config.append_metrics_mem_used.owner)
         appendMetricsMemUsedUrl.searchParams.append("source", entity_data.patch_config.append_metrics_mem_used.source)
@@ -225,7 +225,7 @@ describe("patchConfig", ()=>{
     })
     it("copy_metrics_mem_used", (done) => {
         let copyMetricsMemUsedUrl = new URL(_none_url)
-        copyMetricsMemUsedUrl.pathname = routerData.patchConfig.url
+        copyMetricsMemUsedUrl.pathname = entityRouters.patchConfig.url
         copyMetricsMemUsedUrl.searchParams.append("type", entity_data.patch_config.copy_metrics_mem_used.type)
         copyMetricsMemUsedUrl.searchParams.append("owner", entity_data.patch_config.copy_metrics_mem_used.owner)
         copyMetricsMemUsedUrl.searchParams.append("source", entity_data.patch_config.copy_metrics_mem_used.source)
@@ -247,7 +247,7 @@ describe("patchConfig", ()=>{
     })
     it("remove_metrics_mem_used", (done) => {
         let removeMetricsMemUsedUrl = new URL(_none_url)
-        removeMetricsMemUsedUrl.pathname = routerData.patchConfig.url
+        removeMetricsMemUsedUrl.pathname = entityRouters.patchConfig.url
         removeMetricsMemUsedUrl.searchParams.append("type", entity_data.patch_config.remove_metrics_mem_used.type)
         removeMetricsMemUsedUrl.searchParams.append("owner", entity_data.patch_config.remove_metrics_mem_used.owner)
         removeMetricsMemUsedUrl.searchParams.append("source", entity_data.patch_config.remove_metrics_mem_used.source)
@@ -269,7 +269,7 @@ describe("patchConfig", ()=>{
     })
     it("make_path_if_not_exist", (done) => {
         let makePathUrl = new URL(_none_url)
-        makePathUrl.pathname = routerData.patchConfig.url
+        makePathUrl.pathname = entityRouters.patchConfig.url
         makePathUrl.searchParams.append("type", entity_data.patch_config.make_path_if_not_exist.type)
         makePathUrl.searchParams.append("owner", entity_data.patch_config.make_path_if_not_exist.owner)
         makePathUrl.searchParams.append("source", entity_data.patch_config.make_path_if_not_exist.source)
@@ -291,7 +291,7 @@ describe("patchConfig", ()=>{
     })
     it("add_root_config", (done) => {
         let addRootConfig = new URL(_none_url)
-        addRootConfig.pathname = routerData.patchConfig.url
+        addRootConfig.pathname = entityRouters.patchConfig.url
         addRootConfig.searchParams.append("type", entity_data.patch_config.add_root_config.type)
         addRootConfig.searchParams.append("owner", entity_data.patch_config.add_root_config.owner)
         addRootConfig.searchParams.append("source", entity_data.patch_config.add_root_config.source)
@@ -313,7 +313,7 @@ describe("patchConfig", ()=>{
     })
     it("remove", (done) => {
         let removeUrl = new URL(_none_url)
-        removeUrl.pathname = routerData.patchConfig.url
+        removeUrl.pathname = entityRouters.patchConfig.url
         removeUrl.searchParams.append("type", entity_data.patch_config.remove.type)
         removeUrl.searchParams.append("owner", entity_data.patch_config.remove.owner)
         removeUrl.searchParams.append("source", entity_data.patch_config.remove.source)
@@ -340,7 +340,7 @@ describe("patchConfig", ()=>{
  */
 it("appendConfig", (done) => {
     let appendConfigUrl = new URL(_none_url)
-    appendConfigUrl.pathname = routerData.appendConfig.url
+    appendConfigUrl.pathname = entityRouters.appendConfig.url
     appendConfigUrl.searchParams.append("type", entity_data.append_config.type)
     appendConfigUrl.searchParams.append("owner", entity_data.append_config.owner)
     appendConfigUrl.searchParams.append("source", entity_data.append_config.source)
@@ -365,7 +365,7 @@ it("appendConfig", (done) => {
  */
 it("queryConfig", (done) => {
     let queryConfigUrl = new URL(_none_url)
-    queryConfigUrl.pathname = routerData.removeConfig.url
+    queryConfigUrl.pathname = entityRouters.removeConfig.url
     queryConfigUrl.searchParams.append("type", entity_data.query_config.type)
     queryConfigUrl.searchParams.append("owner", entity_data.query_config.owner)
     queryConfigUrl.searchParams.append("source", entity_data.query_config.source)
@@ -391,7 +391,7 @@ it("queryConfig", (done) => {
  */
 it("removeConfig", (done) => {
     let removeConfigUrl = new URL(_none_url)
-    removeConfigUrl.pathname = routerData.removeConfig.url
+    removeConfigUrl.pathname = entityRouters.removeConfig.url
     removeConfigUrl.searchParams.append("type", entity_data.remove_config.type)
     removeConfigUrl.searchParams.append("owner", entity_data.remove_config.owner)
     removeConfigUrl.searchParams.append("source", entity_data.remove_config.source)
@@ -416,7 +416,7 @@ it("removeConfig", (done) => {
  * Delete Entity
  */
 it("deleteEntity", (done) => {
-    request.delete(implicateID(routerData.deleteEntity.url))
+    request.delete(implicateID(entityRouters.deleteEntity.url))
         .set("authorization", ironMan.authorization)
         .send()
         .expect(200)

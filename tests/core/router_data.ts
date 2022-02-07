@@ -1,5 +1,6 @@
 const prefix:string = "/apis/core/v1"
-export const routerData = {
+
+export const entityRouters = {
     "createEntity": {
         "method": "post",
         "url": prefix + "/entities",
@@ -46,6 +47,6 @@ export const routerData = {
     },
     "removeConfig": {
         "method": "delete",
-        "url": prefix + "/entities/:id/configs/:key"
+        "url": prefix + "/entities/:id/configs"
     },
 }
