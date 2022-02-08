@@ -48,11 +48,11 @@ it("creat tenants", (done) => {
 it("login", (done) => {
   console.log(
     "login:",
-    `/apis/security/v1/oauth/token?grant_type=password&username=${device.tenantInfo.tenant_id}-tanli&password=123456`
+    `/apis/security/v1/oauth/${device.tenantInfo.tenant_id}/token?grant_type=password&username=tanli&password=123456`
   );
   request
     .get(
-      `/apis/security/v1/oauth/token?grant_type=password&username=${device.tenantInfo.tenant_id}-tanli&password=123456`
+      `/apis/security/v1/oauth/${device.tenantInfo.tenant_id}/token?grant_type=password&username=tanli&password=123456`
     )
     .expect(200)
     .then((res: any) => {
