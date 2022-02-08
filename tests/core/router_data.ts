@@ -90,5 +90,8 @@ export const subscriptionRouter = {
 }
 
 export const topicRouter = {
-
+    topicEvent: {
+        "method": "post",
+        "url": prefix + "/topic",
+    },
 }
