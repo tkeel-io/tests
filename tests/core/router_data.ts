@@ -50,3 +50,45 @@ export const entityRouters = {
         "url": prefix + "/entities/:id/configs"
     },
 }
+
+export const searchRouter = {
+    "delete": {
+        "method": "delete",
+        "url": prefix + "/search",
+    },
+    "search": {
+        "method": "post",
+        "url": prefix + "/search",
+    },
+    "index": {
+        "method": "post",
+        "url": prefix + "/index",
+    },
+}
+
+export const subscriptionRouter = {
+    "get": {
+        "method": "get",
+        "url": prefix + "/subscriptions/:id",
+    },
+    "delete": {
+        "method": "delete",
+        "url": prefix + "/subscriptions/:id",
+    },
+    "update": {
+        "method": "put",
+        "url": prefix + "/subscriptions/:id",
+    },
+    "list": {
+        "method": "get",
+        "url": prefix + "/subscriptions",
+    },
+    "create": {
+        "method": "post",
+        "url": prefix + "/subscriptions",
+    },
+}
+
+export const topicRouter = {
+
+}
