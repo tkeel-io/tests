@@ -248,6 +248,45 @@ export const entity_data = {
             "properties": {}
         }
     },
+    append_mapper:{
+        parameters:{
+            source: "entity_source",
+            owner: "entity_owner",
+        },
+        request: {
+            name: "test_mapper",
+            tql:"select * from entity_source",
+        },
+        should_be: {
+            config: {},
+            id: "entityID",
+            mappers: [{
+                name:"test_mapper",
+                tql:"select * from entity_source",
+            }],
+            owner: "entity_owner",
+            properties: {},
+            source: "entity_source",
+            type:"BASIC"
+        }
+    },
+    get_entity_props:{
+        parameters: {
+            source: "entity_source",
+            owner: "entity_owner",
+            type: "BASIC",
+            pids: ["key"]
+        },
+        should_be: {
+            config: {},
+            id: "entityID",
+            mappers: [],
+            owner: "entity_owner",
+            properties: {},
+            source: "entity_source",
+            type:"BASIC"
+        }
+    }
 }
 
 export function implicateID(str:string):string {

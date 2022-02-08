@@ -49,6 +49,14 @@ export const entityRouters = {
         "method": "delete",
         "url": prefix + "/entities/:id/configs"
     },
+    "appendMapper": {
+        "method": "post",
+        "url": prefix + "/entities/:id/mappers"
+    },
+    "getEntityProps": {
+        "method": "get",
+        "url": prefix + "/entities/:id/properties"
+    },
 }
 
 export const searchRouter = {
