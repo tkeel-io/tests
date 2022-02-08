@@ -1,7 +1,7 @@
 import {ironMan} from "../data";
 import {entityRouters} from "./router_data";
 import {request} from "../../src/init";
-import {entity_data, implicateID} from "./enetity_data";
+import {entity_data, implicateID} from "./entity_data";
 
 export const entityTest = "test for core entity";
 
