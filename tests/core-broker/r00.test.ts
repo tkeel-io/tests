@@ -1,18 +1,49 @@
-import { baseURL, subscribeInfo } from "./subscribe_data";
-const st = require("supertest");
-export const request = st(baseURL);
+import { request } from "../../src/init";
+import { ironMan, keel } from "../data";
+import { baseURL, subscribeInfo, tenantInfo } from "./subscribe_data";
+//const st = require("supertest");
+//export const request = st(baseURL);
+
+
+/**
+ * 租户登录平台
+ */
+it("login", (done) => {
+    console.log(
+        "login:",
+        `/apis/security/v1/oauth/${tenantInfo.tenant_id}/token?grant_type=password&username=admin&password=123456`
+    );
+    request
+        .get(
+            `/apis/security/v1/oauth/${tenantInfo.tenant_id}/token?grant_type=password&username=admin&password=123456`
+        )
+        .expect(200)
+        .then((res: any) => {
+            console.log("login return ");
+            let result = JSON.parse(res.text).data;
+            let authorization = `${result.token_type} ${result.access_token}`;
+            tenantInfo["tenantAuthorization"] = authorization;
+            ironMan["tenantAuthorization"] = authorization;
+            console.log("get tenants token ", authorization);
+            done();
+        });
+});
+
+
 
 /**
  * 创建订阅endpoint
  */
 it("create subscribe", (done) => {
     console.log("create subscribe");
+    console.log(ironMan.tenantAuthorization)
     request
-        .post("/v1/subscribe")
+        .post("/apis/core-broker/v1/subscribe")
         .send({
             name: "sub-abc",
             description: "test sub"
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -31,11 +62,12 @@ it("update subscribe", (done) => {
     console.log("update subscribe");
     console.log("sub id:", `${subscribeInfo.subscribe_id}`)
     request
-        .put(`/v1/subscribe/${subscribeInfo.subscribe_id}`)
+        .put(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
         .send({
             name: "update test",
             description: "update test description"
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -51,7 +83,8 @@ it("delete subscribe", (done) => {
     console.log("delete subscribe");
     console.log("sub id:", `${subscribeInfo.subscribe_id}`)
     request
-        .delete(`/v1/subscribe/${subscribeInfo.subscribe_id}`)
+        .delete(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -67,7 +100,8 @@ it("get subscribe", (done) => {
     console.log("get subscribe");
     console.log("sub id:", `${subscribeInfo.subscribe_id}`)
     request
-        .get(`/v1/subscribe/${subscribeInfo.subscribe_id}`)
+        .get(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -82,13 +116,14 @@ it("get subscribe", (done) => {
 it("get subscribe", (done) => {
     console.log("get subscribe");
     request
-        .post(`/v1/subscribe/list`)
+        .post(`/apis/core-broker/v1/subscribe/list`)
         .send({
             page: {
                 limit: 10,
                 offset: 1,
             }
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -105,10 +140,11 @@ it("get subscribe", (done) => {
 it("add subscribe entities by entity ids", (done) => {
     console.log("add subscribe entities by entity ids");
     request
-        .post(`/v1/subscribe/${subscribeInfo.subscribe_id}/entities`)
+        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities`)
         .send({
             entities: ["iotd-1", "iotd-2"]
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -123,10 +159,11 @@ it("add subscribe entities by entity ids", (done) => {
 it("add subscribe entities by groups", (done) => {
     console.log("add subscribe entities by groups");
     request
-        .post(`/v1/subscribe/${subscribeInfo.subscribe_id}/groups`)
+        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/groups`)
         .send({
             groups: ["group-1", "group-2"]
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -141,10 +178,11 @@ it("add subscribe entities by groups", (done) => {
 it("add subscribe entities by models", (done) => {
     console.log("add subscribe entities by models");
     request
-        .post(`/v1/subscribe/${subscribeInfo.subscribe_id}/models`)
+        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/models`)
         .send({
             models: ["model-1", "model-2"]
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -159,10 +197,11 @@ it("add subscribe entities by models", (done) => {
 it("delete subscribe entities by entity ids", (done) => {
     console.log("add subscribe entities by entity ids");
     request
-        .post(`/v1/subscribe/${subscribeInfo.subscribe_id}/entities/delete`)
+        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities/delete`)
         .send({
             entities: ["iotd-1", "iotd-2"]
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
@@ -177,13 +216,14 @@ it("delete subscribe entities by entity ids", (done) => {
 it("get subscribe entity list", (done) => {
     console.log("get subscribe entity list");
     request
-        .post(`/v1/subscribe/${subscribeInfo.subscribe_id}/entities/list`)
+        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities/list`)
         .send({
             page: {
                 limit: 10,
                 offset: 0,
             }
         })
+        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
         .then((res) => {
             let result = JSON.parse(res.text)
