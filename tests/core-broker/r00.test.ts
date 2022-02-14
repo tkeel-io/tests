@@ -1,56 +1,31 @@
 import { request } from "../../src/init";
-import { ironMan, keel } from "../data";
-import { baseURL, subscribeInfo, tenantInfo } from "./subscribe_data";
-//const st = require("supertest");
-//export const request = st(baseURL);
-
-
-/**
- * 租户登录平台
- */
-it("login", (done) => {
-    console.log(
-        "login:",
-        `/apis/security/v1/oauth/${tenantInfo.tenant_id}/token?grant_type=password&username=admin&password=123456`
-    );
-    request
-        .get(
-            `/apis/security/v1/oauth/${tenantInfo.tenant_id}/token?grant_type=password&username=admin&password=123456`
-        )
-        .expect(200)
-        .then((res: any) => {
-            console.log("login return ");
-            let result = JSON.parse(res.text).data;
-            let authorization = `${result.token_type} ${result.access_token}`;
-            tenantInfo["tenantAuthorization"] = authorization;
-            ironMan["tenantAuthorization"] = authorization;
-            console.log("get tenants token ", authorization);
-            done();
-        });
-});
-
-
+import { spiderMan } from "../data";
+import {subscribe, subscribeInfo} from "./subscribe_data";
+import {subscribeRouters} from "./router_data";
+import {getResponseData} from "../../src/utils"
 
 /**
- * 创建订阅endpoint
+ * 创建订阅 endpoint
  */
 it("create subscribe", (done) => {
-    console.log("create subscribe");
-    console.log(ironMan.tenantAuthorization)
-    request
-        .post("/apis/core-broker/v1/subscribe")
+    request.post(subscribeRouters.create.url)
+        .set("authorization", spiderMan.authorization)
         .send({
-            name: "sub-abc",
-            description: "test sub"
+            title: subscribeInfo.creation.title,
+            description: subscribeInfo.creation.description
         })
-        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
-            let subscribe_id = `${result.data.id}`
-            console.log(subscribe_id)
-            subscribeInfo.subscribe_id = subscribe_id
+        .end((err,res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBeDefined();
+            subscribe.ID = result.id;
+            expect(result.endpoint).toBeDefined();
+            subscribe.endpoint = result.endpoint;
+            expect(result.title).toBe(subscribeInfo.creation.title);
+            subscribe.title = result.title
+            expect(result.description).toBe(subscribeInfo.creation.description);
+            subscribe.description = result.description
             done();
         });
 });
@@ -59,36 +34,22 @@ it("create subscribe", (done) => {
  * 更新订阅endpoint
  */
 it("update subscribe", (done) => {
-    console.log("update subscribe");
-    console.log("sub id:", `${subscribeInfo.subscribe_id}`)
-    request
-        .put(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
+    request.patch(subscribeRouters.update.url.replace(":id", subscribe.ID))
         .send({
-            name: "update test",
-            description: "update test description"
+            title: subscribeInfo.updated.title,
+            description: subscribeInfo.updated.description
         })
-        .set("authorization", ironMan.tenantAuthorization)
+        .set("authorization", spiderMan.authorization)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
-            done();
-        });
-});
-
-/**
- * 删除订阅endpoint
- */
-it("delete subscribe", (done) => {
-    console.log("delete subscribe");
-    console.log("sub id:", `${subscribeInfo.subscribe_id}`)
-    request
-        .delete(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
-        .set("authorization", ironMan.tenantAuthorization)
-        .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.endpoint).toBe(subscribe.endpoint);
+            expect(result.title).toBe(subscribeInfo.updated.title);
+            subscribe.title = result.title
+            expect(result.description).toBe(subscribeInfo.updated.description);
+            subscribe.description = result.description
             done();
         });
 });
@@ -97,15 +58,15 @@ it("delete subscribe", (done) => {
  * 获取订阅endpoint信息
  */
 it("get subscribe", (done) => {
-    console.log("get subscribe");
-    console.log("sub id:", `${subscribeInfo.subscribe_id}`)
-    request
-        .get(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}`)
-        .set("authorization", ironMan.tenantAuthorization)
+    request.get(subscribeRouters.get.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.endpoint).toBe(subscribe.endpoint);
+            expect(result.title).toBe(subscribe.title);
+            expect(result.description).toBe(subscribe.description);
             done();
         });
 });
@@ -113,21 +74,19 @@ it("get subscribe", (done) => {
 /**
  * 获取订阅endpoint列表
  */
-it("get subscribe", (done) => {
-    console.log("get subscribe");
-    request
-        .post(`/apis/core-broker/v1/subscribe/list`)
-        .send({
-            page: {
-                limit: 10,
-                offset: 1,
-            }
-        })
-        .set("authorization", ironMan.tenantAuthorization)
+it("get subscribe list", (done) => {
+    request.post(subscribeRouters.list.url)
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.listWithPagination.page)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.total).toBe(subscribeInfo.listWithPagination.response.total);
+            expect(result.page_num).toBe(subscribeInfo.listWithPagination.response.page_num);
+            expect(result.page_size).toBe(subscribeInfo.listWithPagination.response.page_size);
+            expect(result.last_page).toBe(subscribeInfo.listWithPagination.response.last_page);
+            expect(result.data).toBe(subscribeInfo.listWithPagination.response.data);
             done();
         });
 });
@@ -138,17 +97,16 @@ it("get subscribe", (done) => {
  * 通过实体id增加订阅的实体
  */
 it("add subscribe entities by entity ids", (done) => {
-    console.log("add subscribe entities by entity ids");
     request
-        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities`)
-        .send({
-            entities: ["iotd-1", "iotd-2"]
-        })
-        .set("authorization", ironMan.tenantAuthorization)
+        .post(subscribeRouters.subscribeByIDs.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.subscribeByIDs.request)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.status).toBe(subscribeInfo.subscribeByIDs.response.status);
             done();
         });
 });
@@ -157,17 +115,15 @@ it("add subscribe entities by entity ids", (done) => {
  * 通过实体组增加订阅的实体
  */
 it("add subscribe entities by groups", (done) => {
-    console.log("add subscribe entities by groups");
-    request
-        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/groups`)
-        .send({
-            groups: ["group-1", "group-2"]
-        })
-        .set("authorization", ironMan.tenantAuthorization)
+    request.post(subscribeRouters.subscribeByGroup.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.subscribeByGroup.request)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.status).toBe(subscribeInfo.subscribeByGroup.response.status);
             done();
         });
 });
@@ -176,17 +132,15 @@ it("add subscribe entities by groups", (done) => {
  * 通过模型增加订阅的实体
  */
 it("add subscribe entities by models", (done) => {
-    console.log("add subscribe entities by models");
-    request
-        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/models`)
-        .send({
-            models: ["model-1", "model-2"]
-        })
-        .set("authorization", ironMan.tenantAuthorization)
+    request.post(subscribeRouters.subscribeByModels.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.subscribeByModel.request)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .emd((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.status).toBe(subscribeInfo.subscribeByModel.response.status);
             done();
         });
 });
@@ -196,16 +150,15 @@ it("add subscribe entities by models", (done) => {
  */
 it("delete subscribe entities by entity ids", (done) => {
     console.log("add subscribe entities by entity ids");
-    request
-        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities/delete`)
-        .send({
-            entities: ["iotd-1", "iotd-2"]
-        })
-        .set("authorization", ironMan.tenantAuthorization)
+    request.post(subscribeRouters.unsubscribeEntities.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.unsubscribeByIDs.request)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
+            expect(result.status).toBe(subscribeInfo.unsubscribeByIDs.response.status);
             done();
         });
 });
@@ -214,20 +167,36 @@ it("delete subscribe entities by entity ids", (done) => {
  * 获取订阅的实体列表
  */
 it("get subscribe entity list", (done) => {
-    console.log("get subscribe entity list");
-    request
-        .post(`/apis/core-broker/v1/subscribe/${subscribeInfo.subscribe_id}/entities/list`)
+    request.post(subscribeRouters.listSubscribeEntities.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
         .send({
-            page: {
-                limit: 10,
-                offset: 0,
-            }
+            page_num: 0,
+            page_size:0
         })
-        .set("authorization", ironMan.tenantAuthorization)
         .expect(200)
-        .then((res) => {
-            let result = JSON.parse(res.text)
-            console.log(result)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.total).toBeDefined()
+            expect(result.page_num).toBeDefined()
+            expect(result.page_size).toBeDefined()
+            expect(result.last_page).toBeDefined()
+            expect(result.data).toBeDefined()
+            done();
+        });
+});
+
+/**
+ * 删除订阅endpoint
+ */
+it("delete subscribe", (done) => {
+    request.delete(subscribeRouters.delete.url.replace(":id", subscribe.ID))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .then((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.ID);
             done();
         });
 });

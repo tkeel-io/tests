@@ -8,9 +8,15 @@
 import { v4 as uuidv4 } from "uuid";
 
 // 全局依赖数据
+// 管理用户账号信息
 export const ironMan: any = {
   authorization: "平台管理员登录用的token",
   tenantAuthorization: "平台管理员登录用的token",
+};
+// 租户用户信息
+export const spiderMan: any = {
+  id: "5imdM-Ve",
+  authorization: "租户用户的token",
 };
 
 // 测试环境
