@@ -82,10 +82,10 @@ it("get subscribe list", (done) => {
         .end((err, res) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
-            expect(result.total).toBe(subscribeInfo.listWithPagination.response.total);
-            expect(result.page_num).toBe(subscribeInfo.listWithPagination.response.page_num);
-            expect(result.page_size).toBe(subscribeInfo.listWithPagination.response.page_size);
-            expect(result.last_page).toBe(subscribeInfo.listWithPagination.response.last_page);
+            expect(parseInt(result.total)).toBe(subscribeInfo.listWithPagination.response.total);
+            expect(parseInt(result.page_num)).toBe(subscribeInfo.listWithPagination.response.page_num);
+            expect(parseInt(result.page_size)).toBe(subscribeInfo.listWithPagination.response.page_size);
+            expect(parseInt(result.last_page)).toBe(subscribeInfo.listWithPagination.response.last_page);
             expect(result.data).toBe(subscribeInfo.listWithPagination.response.data);
             done();
         });
