@@ -12,13 +12,11 @@ function makeid(length) {
 export const subscribe = {
     title: "",
     description: "",
-    ID: "",
+    id: "",
     endpoint: "",
 }
 
-const subscribe_data = {
-    "data":[subscribe]
-}
+const subscribe_data = [subscribe]
 
 const STATUS_SUCCESS = "SUCCESS"
 
