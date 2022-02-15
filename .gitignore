@@ -4,3 +4,5 @@ report
 coverage
 cases
 lib
+
+src/configs/db.json
