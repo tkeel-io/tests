@@ -136,7 +136,7 @@ it("add subscribe entities by models", (done) => {
         .set("authorization", spiderMan.authorization)
         .send(subscribeInfo.subscribeByModel.request)
         .expect(200)
-        .emd((err, res) => {
+        .end((err, res) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
             expect(result.id).toBe(subscribe.ID);
@@ -193,7 +193,7 @@ it("delete subscribe", (done) => {
     request.delete(subscribeRouters.delete.url.replace(":id", subscribe.ID))
         .set("authorization", spiderMan.authorization)
         .expect(200)
-        .then((err, res) => {
+        .end((err, res) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
             expect(result.id).toBe(subscribe.ID);
