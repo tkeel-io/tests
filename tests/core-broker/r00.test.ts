@@ -4,6 +4,8 @@ import {subscribe, subscribeInfo} from "./subscribe_data";
 import {subscribeRouters} from "./router_data";
 import {getResponseData} from "../../src/utils"
 
+let sedSubID
+
 /**
  * 创建订阅 endpoint
  */
@@ -26,7 +28,33 @@ it("create subscribe", (done) => {
             subscribe.title = result.title
             expect(result.description).toBe(subscribeInfo.creation.description);
             subscribe.description = result.description
+            expect(result.is_default).toBeDefined();
+            subscribe.is_default = result.is_default;
             done();
+        });
+
+    // 创建第二个供可删除使用的订阅
+    request.post(subscribeRouters.create.url)
+        .set("authorization", spiderMan.authorization)
+        .send({
+            title: subscribeInfo.creation.title,
+            description: subscribeInfo.creation.description
+        })
+        .expect(200)
+        .end((err,res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            sedSubID = result.id
+            request.delete(subscribeRouters.delete.url.replace(":id", sedSubID))
+                .set("authorization", spiderMan.authorization)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) return done(err);
+                    let result = getResponseData(res.text)
+                    sedSubID = result.id
+                    expect(result.is_default).toBe(false);
+                    done();
+                });
         });
 });
 
@@ -47,6 +75,7 @@ it("update subscribe", (done) => {
             expect(result.id).toBe(subscribe.id);
             expect(result.endpoint).toBe(subscribe.endpoint);
             expect(result.title).toBe(subscribeInfo.updated.title);
+            expect(result.is_default).toBe(subscribe.is_default)
             subscribe.title = result.title
             expect(result.description).toBe(subscribeInfo.updated.description);
             subscribe.description = result.description
@@ -67,6 +96,7 @@ it("get subscribe", (done) => {
             expect(result.endpoint).toBe(subscribe.endpoint);
             expect(result.title).toBe(subscribe.title);
             expect(result.description).toBe(subscribe.description);
+            expect(result.is_default).toBe(subscribe.is_default);
             done();
         });
 });
@@ -86,7 +116,7 @@ it("get subscribe list", (done) => {
             expect(parseInt(result.page_num)).toBe(subscribeInfo.listWithPagination.response.page_num);
             expect(parseInt(result.page_size)).toBe(subscribeInfo.listWithPagination.response.page_size);
             expect(parseInt(result.last_page)).toBe(subscribeInfo.listWithPagination.response.last_page);
-            expect(result.data).toEqual(subscribeInfo.listWithPagination.response.data);
+            expect(result.data[0]).toEqual(subscribeInfo.listWithPagination.response.data);
             done();
         });
 });
@@ -192,11 +222,22 @@ it("get subscribe entity list", (done) => {
 it("delete subscribe", (done) => {
     request.delete(subscribeRouters.delete.url.replace(":id", subscribe.id))
         .set("authorization", spiderMan.authorization)
+        .expect(500)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = JSON.parse(res.text);
+            expect(result.msg).toBe("delete subscribe err: this is default subscribe: undeleteable");
+            done();
+        });
+
+    // 删除第二个可删除的订阅
+    request.delete(subscribeRouters.delete.url.replace(":id", sedSubID))
+        .set("authorization", spiderMan.authorization)
         .expect(200)
         .end((err, res) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
-            expect(result.id).toBe(subscribe.id);
+            expect(result.id).toBe(sedSubID);
             done();
         });
 });

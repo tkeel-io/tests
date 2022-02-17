@@ -14,6 +14,7 @@ export const subscribe = {
     description: "",
     id: "",
     endpoint: "",
+    is_default: false
 }
 
 const subscribe_data = [subscribe]
@@ -39,11 +40,11 @@ export const subscribeInfo: any = {
             page_size: 10,
         },
         response: {
-            total:1,
+            total:2,
             page_num: 1,
             page_size: 10,
             last_page: 1,
-            data: subscribe_data,
+            data: subscribe_data[0],
         }
     },
     subscribeByIDs : {
