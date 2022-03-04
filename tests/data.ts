@@ -21,7 +21,7 @@ export const spiderMan: any = {
 
 // 测试环境
 export const service = "http://192.168.123.9";
-export const adminPassword = "Y2hhbmdlbWU=";
+export const adminPassword = "dEtlZWxBZG1pbg==";
 export const port = "30707";
 export const baseURL = `${service}:${port}`;
 
