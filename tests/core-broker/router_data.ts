@@ -45,4 +45,8 @@ export const subscribeRouters = {
         "method": "post",
         "url": prefix + "/subscribe/:id/entities/delete"
     },
+    "changeSubscribe": {
+        "method": "put",
+        "url": prefix + "/subscribe/:id"
+    },
 }

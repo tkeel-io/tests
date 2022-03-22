@@ -75,7 +75,6 @@ it("update subscribe", (done) => {
             expect(result.id).toBe(subscribe.id);
             expect(result.endpoint).toBe(subscribe.endpoint);
             expect(result.title).toBe(subscribeInfo.updated.title);
-            expect(result.is_default).toBe(subscribe.is_default)
             subscribe.title = result.title
             expect(result.description).toBe(subscribeInfo.updated.description);
             subscribe.description = result.description
@@ -116,7 +115,6 @@ it("get subscribe list", (done) => {
             expect(parseInt(result.page_num)).toBe(subscribeInfo.listWithPagination.response.page_num);
             expect(parseInt(result.page_size)).toBe(subscribeInfo.listWithPagination.response.page_size);
             expect(parseInt(result.last_page)).toBe(subscribeInfo.listWithPagination.response.last_page);
-            expect(result.data[0]).toEqual(subscribeInfo.listWithPagination.response.data);
             done();
         });
 });
@@ -212,6 +210,23 @@ it("get subscribe entity list", (done) => {
             expect(result.page_size).toBeDefined()
             expect(result.last_page).toBeDefined()
             expect(result.data).toBeDefined()
+            done();
+        });
+});
+
+/**
+ * 移动订阅
+ */
+it("change subscribe", (done) => {
+    request.put(subscribeRouters.changeSubscribe.url.replace(":id", subscribe.id))
+        .set("authorization", spiderMan.authorization)
+        .send(subscribeInfo.changeSubscribe.request)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            expect(result.id).toBe(subscribe.id);
+            expect(result.status).toBe(subscribeInfo.changeSubscribe.response.status);
             done();
         });
 });

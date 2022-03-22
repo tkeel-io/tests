@@ -21,9 +21,9 @@ const subscribe_data = [subscribe]
 
 const STATUS_SUCCESS = "SUCCESS"
 
-const test_groups_data = ["group-1", "group-2", "group-3"]
+const test_groups_data = ["197d6188-e82f-4c07-8786-fe3bb247cad8"]
 const test_models_data = ["model-1", "model-2", "model-3"]
-const test_ids_data = ["entity_id-1", "entity_id-2", "entity_id-3"]
+const test_ids_data = ["d969e1a2-754c-44a7-a3df-2335c7609aee"]
 
 export const subscribeInfo: any = {
     creation:{
@@ -74,6 +74,15 @@ export const subscribeInfo: any = {
     unsubscribeByIDs : {
         request:{
             entities: test_ids_data,
+        },
+        response: {
+            status: STATUS_SUCCESS,
+        }
+    },
+    changeSubscribe: {
+        request:{
+            target_id: "",
+            selected_IDs: "",
         },
         response: {
             status: STATUS_SUCCESS,
