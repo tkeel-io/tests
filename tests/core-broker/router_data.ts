@@ -49,4 +49,8 @@ export const subscribeRouters = {
         "method": "put",
         "url": prefix + "/subscribe/:id"
     },
+    "subscribeByDevices": {
+        "method": "post",
+        "url": "/subscribe/device/:id"
+    }
 }

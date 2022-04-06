@@ -82,12 +82,21 @@ export const subscribeInfo: any = {
     changeSubscribe: {
         request:{
             target_id: "",
-            selected_IDs: "",
+            selected_IDs: test_ids_data,
         },
         response: {
             status: STATUS_SUCCESS,
         }
     },
+    SubscribeByDevice: {
+        request: {
+            id: test_ids_data[0],
+            subscribe_ids: [subscribe.id]
+        },
+        response: {
+            status: STATUS_SUCCESS,
+        }
+    }
 };
 
 
