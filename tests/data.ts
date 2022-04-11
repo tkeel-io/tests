@@ -15,13 +15,15 @@ export const ironMan: any = {
 };
 // 租户用户信息
 export const spiderMan: any = {
-  id: "5imdM-Ve",
+  id: "_fiTdT6u",
+  username: "alex",
+  password: "password",
   authorization: "租户用户的token",
 };
 
 // 测试环境
 export const service = "http://192.168.123.9";
-export const adminPassword = "dEtlZWxBZG1pbg==";
+export const adminPassword = "Y2hhbmdlbWU=";
 export const port = "30707";
 export const baseURL = `${service}:${port}`;
 
