@@ -91,6 +91,22 @@ it("mysql table list", (done) => {
 });
 
 /**
+ * mysql  map
+ */
+it("mysql map", (done) => {
+    request
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl"))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .then((res: any) => {
+            console.log("mysql map ");
+            let result = JSON.parse(res.text).data;
+            console.log(result)
+            done();
+        });
+});
+
+/**
  * verfy target clickhouse
  */
 it("verify clickhouse", (done) => {
@@ -150,6 +166,22 @@ it("clickhouse table list", (done) => {
         .expect(200)
         .then((res: any) => {
             console.log("mysql table list ");
+            let result = JSON.parse(res.text).data;
+            console.log(result)
+            done();
+        });
+});
+
+/**
+ * clickhouse  map
+ */
+it("clickhouse map", (done) => {
+    request
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "hits_v1"))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .then((res: any) => {
+            console.log("clickhouse map ");
             let result = JSON.parse(res.text).data;
             console.log(result)
             done();
