@@ -1,5 +1,7 @@
 import { adminPassword, baseURL, ironMan, spiderMan } from "../../tests/data";
-
+import { ruleRouters } from "./router_data";
+import { data, rule, target } from "./data";
+import { getResponseData } from "../../src/utils";
 const st = require("supertest");
 export const request = st(baseURL);
 
@@ -107,6 +109,23 @@ it("mysql map", (done) => {
 });
 
 /**
+ * mysql  map error
+ */
+it("mysql map", (done) => {
+    request
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl1"))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .then((res: any) => {
+            console.log("mysql map error ");
+            let result = JSON.parse(res.text).data;
+            console.log(result)
+            done();
+        });
+});
+
+
+/**
  * verfy target clickhouse
  */
 it("verify clickhouse", (done) => {
@@ -187,3 +206,53 @@ it("clickhouse map", (done) => {
             done();
         });
 });
+
+it("create rule", (done) => {
+    request.post(ruleRouters.create.url)
+        .set("authorization", spiderMan.authorization)
+        .send({
+            name: rule.name,
+            desc: rule.desc,
+            type: rule.type,
+            model_id: rule.model_id,
+            model_name: rule.model_name
+        })
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            expect(result.name).toBeDefined();
+            expect(result.name).toEqual(rule.name);
+            expect(result.desc).toBeDefined();
+            expect(result.desc).toEqual(rule.desc);
+            expect(result.type).toBeDefined();
+            rule.type = result.type
+            expect(result.id).toBeDefined();
+            rule.id = result.id;
+            done();
+        });
+});
+
+
+
+
+
+
+it("list rule", (done) => {
+    request.get(pagination(ruleRouters["list/query"].url))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            expect(result.total).toBeDefined();
+            expect(result.data).toBeDefined();
+            done();
+        });
+});
+
+function pagination(url: string): string {
+    return `${url}?page_num=1&page_size=20&type=0`;
+}

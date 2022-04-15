@@ -4,11 +4,13 @@ const desc = makeid(10)
 export const rule = {
     name: name,
     desc: desc,
-    type: 1,
+    type: 2,
     id: "",
     status: 0,
     createdAt: 0,
     updatedAt: 0,
+    model_id: "modelid-1",
+    model_name: "modelname-1"
 }
 
 export const target = {
@@ -55,6 +57,14 @@ export const data = {
             type: 1,
             host: "localhost",
             value: "/test"
+        },
+        mysqlrequest: {
+            // Edit this
+
+            sink_type: "mysql",
+            sink_id: "id",
+            table_name: "testabc",
+            fields: [{ tfield_name: "abc", m_field: { name: "abc", type: "int" } }]
         },
 
     },
