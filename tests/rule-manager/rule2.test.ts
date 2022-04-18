@@ -93,9 +93,42 @@ it(" create rule target", (done) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
             console.log(res.text)
+            target.id = result.id
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", rule.id))
             done();
         });
 })
+
+it("list rule target", (done) => {
+    request.get(ruleRouters.createRuleTarget.url.replace(":ruleId", rule.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(res.text)
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", rule.id))
+            done();
+        });
+})
+
+
+it("delete rule target", (done) => {
+    request.delete(ruleRouters.deleteRuleTarget.url.replace(":ruleId", rule.id).replace(":targetId", target.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(res.text)
+            console.log(ruleRouters.deleteRuleTarget.url.replace(":ruleId", rule.id).replace(":targetId", target.id))
+            done();
+        });
+})
+
+
 
 /*
 
