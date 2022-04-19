@@ -59,14 +59,11 @@ export const data = {
             value: "/test"
         },
         mysqlrequest: {
-            // Edit this
-
             sink_type: "mysql",
             sink_id: "id",
             table_name: "testabc",
             fields: [{ tfield_name: "abc", m_field: { name: "abc", type: "int" } }]
         },
-
     },
     updateRuleTarget: {
         request: {
