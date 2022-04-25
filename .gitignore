@@ -4,5 +4,6 @@ report
 coverage
 cases
 lib
+.idea
+yarn.lock
 
-src/configs/db.json
