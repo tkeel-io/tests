@@ -1,12 +1,11 @@
 import { adminPassword, baseURL, ironMan, spiderMan } from "../../tests/data";
 import { ruleRouters } from "./router_data";
-import { data, rule, target } from "./data";
+import { data } from "./data";
 import { getResponseData } from "../../src/utils";
 const st = require("supertest");
 export const request = st(baseURL);
 
 
-// 租户用户信息
 export const sink: any = {
     id: "a4778aPO",
 };
@@ -28,104 +27,6 @@ it("tenantLogin", (done) => {
 });
 
 /**
- * verfy target mysql
- */
-it("verify mysql", (done) => {
-    request
-        .post(`/apis/rule-manager/v1/verify/mysql`)
-        .set("authorization", spiderMan.authorization)
-        .send({
-            urls: "10.96.166.237:3306",
-            meta: {
-                user: "root",
-                password: "a3fks=ixmeb82a",
-                db_name: "testverify"
-            }
-        })
-        .expect(200)
-        .then((res: any) => {
-            console.log("verify mysql return ");
-            let result = JSON.parse(res.text).data;
-            console.log(result);
-            sink.id = `${result.id}`;
-            console.log(sink);
-            done();
-        });
-});
-
-/**
- * verfy target mysql failed
- */
-it("verify mysql failed", (done) => {
-    request
-        .post(`/apis/rule-manager/v1/verify/mysql`)
-        .set("authorization", spiderMan.authorization)
-        .send({
-            urls: "10.96.166.237:3306",
-            meta: {
-                user: "root1",
-                password: "a3fks=ixmeb82a",
-                db_name: "testverify"
-            }
-        })
-        .expect(200)
-        .then((res: any) => {
-            console.log("verify mysql failed return ");
-            let result = JSON.parse(res.text);
-            console.log(result);
-            done();
-        });
-});
-/**
- * mysql table list
- */
-it("mysql table list", (done) => {
-    request
-        .get(`/apis/rule-manager/v1/sink/:id/tables`.replace(":id", sink.id))
-        .set("authorization", spiderMan.authorization)
-        .expect(200)
-        .then((res: any) => {
-            console.log("mysql table list ");
-            let result = JSON.parse(res.text).data;
-            console.log(result)
-            done();
-        });
-});
-
-/**
- * mysql  map
- */
-it("mysql map", (done) => {
-    request
-        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl"))
-        .set("authorization", spiderMan.authorization)
-        .expect(200)
-        .then((res: any) => {
-            console.log("mysql map ");
-            let result = JSON.parse(res.text).data;
-            console.log(result)
-            done();
-        });
-});
-
-/**
- * mysql  map error
- */
-it("mysql map", (done) => {
-    request
-        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl1"))
-        .set("authorization", spiderMan.authorization)
-        .expect(200)
-        .then((res: any) => {
-            console.log("mysql map error ");
-            let result = JSON.parse(res.text).data;
-            console.log(result)
-            done();
-        });
-});
-
-
-/**
  * verfy target clickhouse
  */
 it("verify clickhouse", (done) => {
@@ -133,7 +34,7 @@ it("verify clickhouse", (done) => {
         .post(`/apis/rule-manager/v1/verify/clickhouse`)
         .set("authorization", spiderMan.authorization)
         .send({
-            urls: "10.96.182.68:8123",
+            urls: "clickhouse-my-ck:8123",
             meta: {
                 user: "default",
                 password: "C1ickh0use",
@@ -146,6 +47,7 @@ it("verify clickhouse", (done) => {
             let result = JSON.parse(res.text).data;
             console.log(result);
             sink.id = `${result.id}`;
+            ck_request.sink_id = `${result.id}`
             console.log(sink);
             done();
         });
@@ -196,7 +98,7 @@ it("clickhouse table list", (done) => {
  */
 it("clickhouse map", (done) => {
     request
-        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "hits_v1"))
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "event_data"))
         .set("authorization", spiderMan.authorization)
         .expect(200)
         .then((res: any) => {
@@ -207,15 +109,29 @@ it("clickhouse map", (done) => {
         });
 });
 
+export const ck_rule = {
+    name: "ck-rule",
+    desc: "testck",
+    type: 2,
+    id: "",
+    status: 0,
+    createdAt: 0,
+    updatedAt: 0,
+    model_id: "iotd-096843a2-6e60-415d-b782-bb6383a58b16",
+    model_name: "rule-test"
+}
+/**
+ * create_mysql rule
+ */
 it("create rule", (done) => {
     request.post(ruleRouters.create.url)
         .set("authorization", spiderMan.authorization)
         .send({
-            name: rule.name,
-            desc: rule.desc,
-            type: rule.type,
-            model_id: rule.model_id,
-            model_name: rule.model_name
+            name: ck_rule.name,
+            desc: ck_rule.desc,
+            type: ck_rule.type,
+            model_id: ck_rule.model_id,
+            model_name: ck_rule.model_name
         })
         .expect(200)
         .end((err, res) => {
@@ -223,21 +139,108 @@ it("create rule", (done) => {
             let result = getResponseData(res.text)
             console.log(result)
             expect(result.name).toBeDefined();
-            expect(result.name).toEqual(rule.name);
+            expect(result.name).toEqual(ck_rule.name);
             expect(result.desc).toBeDefined();
-            expect(result.desc).toEqual(rule.desc);
+            expect(result.desc).toEqual(ck_rule.desc);
             expect(result.type).toBeDefined();
-            rule.type = result.type
+            ck_rule.type = result.type
             expect(result.id).toBeDefined();
-            rule.id = result.id;
+            ck_rule.id = result.id;
             done();
         });
 });
 
+export const ck_request = {
+    sink_type: "clickhouse",
+    sink_id: "id",
+    table_name: "event_data",
+    fields: [{ t_field: { name: "abc", type: "float" }, m_field: { name: "abc", type: "float" } }]
+}
+
+export const target = {
+    id: "",
+    type: 0,
+    host: "",
+    value: "",
+    ext: ""
+}
+
+/**
+ * create_mysql rule target
+ */
+it(" create rule target", (done) => {
+    request.post(ruleRouters.createRuleTarget.url.replace(":ruleId", ck_rule.id))
+        .set("authorization", spiderMan.authorization)
+        .send(ck_request)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(res.text)
+            target.id = result.id
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", ck_rule.id))
+            done();
+        });
+})
+
+/**
+ * update clickhouse rule target map
+ */
+
+
+export const update_table_map = {
+    target_id: "",
+    table_name: "event_data",
+    fields: [{ t_field: { name: "abc1", type: "int" }, m_field: { name: "abc1", type: "int" } }]
+}
+
+it("update clickhouse rule target map", (done) => {
+    update_table_map.target_id = target.id
+    console.log(ruleRouters.updateTablemap.url.replace(":Id", ck_request.sink_id))
+    request.put(ruleRouters.updateTablemap.url.replace(":Id", ck_request.sink_id))
+        .set("authorization", spiderMan.authorization)
+        .send(update_table_map)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(res.text)
+            target.id = result.id
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", ck_rule.id))
+            done();
+        });
+})
+
+
+it("list rule target", (done) => {
+    request.get(ruleRouters.createRuleTarget.url.replace(":ruleId", ck_rule.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(res.text)
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", ck_rule.id))
+            done();
+        });
+})
 
 
 
-
+it("delete rule", (done) => {
+    request.delete(ruleRouters.delete.url.replace(":id", ck_rule.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            done();
+        });
+});
 
 it("list rule", (done) => {
     request.get(pagination(ruleRouters["list/query"].url))
@@ -253,6 +256,7 @@ it("list rule", (done) => {
         });
 });
 
+
 function pagination(url: string): string {
-    return `${url}?page_num=1&page_size=20&type=0`;
+    return `${url}?page_num=1&page_size=2&type=0`;
 }

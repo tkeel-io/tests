@@ -5,7 +5,7 @@ export const rule = {
     name: name,
     desc: desc,
     type: 2,
-    id: "",
+    id: "161",
     status: 0,
     createdAt: 0,
     updatedAt: 0,
@@ -14,7 +14,7 @@ export const rule = {
 }
 
 export const target = {
-    id: "",
+    id: "90",
     type: 0,
     host: "",
     value: "",
@@ -62,7 +62,7 @@ export const data = {
             sink_type: "mysql",
             sink_id: "id",
             table_name: "testabc",
-            fields: [{ tfield_name: "abc", m_field: { name: "abc", type: "int" } }]
+            fields: [{ t_field: { name: "abc", type: "int" }, m_field: { name: "abc", type: "int" } }]
         },
     },
     updateRuleTarget: {

@@ -34,7 +34,7 @@ it("verify mysql", (done) => {
         .post(`/apis/rule-manager/v1/verify/mysql`)
         .set("authorization", spiderMan.authorization)
         .send({
-            urls: "10.96.166.237:3306",
+            urls: "10.10.28.2:3306",
             meta: {
                 user: "root",
                 password: "a3fks=ixmeb82a",
@@ -76,6 +76,9 @@ it("verify mysql failed", (done) => {
             done();
         });
 });
+
+
+
 /**
  * mysql table list
  */
@@ -97,7 +100,7 @@ it("mysql table list", (done) => {
  */
 it("mysql map", (done) => {
     request
-        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl"))
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "lz_rule1"))
         .set("authorization", spiderMan.authorization)
         .expect(200)
         .then((res: any) => {
@@ -113,7 +116,7 @@ it("mysql map", (done) => {
  */
 it("mysql map", (done) => {
     request
-        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "runoob_tbl1"))
+        .get(`/apis/rule-manager/v1/sink/:id/maps?table_name=:table_name`.replace(":id", sink.id).replace(":table_name", "lz_rul1"))
         .set("authorization", spiderMan.authorization)
         .expect(200)
         .then((res: any) => {
@@ -124,7 +127,6 @@ it("mysql map", (done) => {
         });
 });
 
-
 export const mysql_rule = {
     name: "mysql-rule",
     desc: "testmysql",
@@ -133,8 +135,8 @@ export const mysql_rule = {
     status: 0,
     createdAt: 0,
     updatedAt: 0,
-    model_id: "modelid-1",
-    model_name: "modelname-1"
+    model_id: "iotd-1c6384c3-d11e-40d9-aeca-5c7371d23ceb",
+    model_name: "lz-m1"
 }
 /**
  * create_mysql rule
@@ -169,8 +171,8 @@ it("create rule", (done) => {
 export const mysql_request = {
     sink_type: "mysql",
     sink_id: "id",
-    table_name: "testabc",
-    fields: [{ tfield_name: "abc", m_field: { name: "abc", type: "int" } }]
+    table_name: "lz_rule1",
+    fields: [{ t_field: { name: "abcd", type: "float" }, m_field: { name: "abc", type: "float" } }]
 }
 
 export const target = {
@@ -193,7 +195,7 @@ it(" create rule target", (done) => {
             console.log(err)
             if (err) return done(err);
             let result = getResponseData(res.text)
-            console.log(res.text)
+            console.log(result)
             target.id = result.id
             console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", mysql_rule.id))
             done();
@@ -205,9 +207,10 @@ it(" create rule target", (done) => {
  */
 export const update_table_map = {
     target_id: "",
-    table_name: "testabc",
-    fields: [{ tfield_name: "abc1", m_field: { name: "abc1", type: "int" } }]
+    table_name: "lz_rule1",
+    fields: [{ t_field: { name: "abcd", type: "float" }, m_field: { name: "abc", type: "float" } }]
 }
+
 
 it("update mysql rule target map", (done) => {
     update_table_map.target_id = target.id
@@ -220,8 +223,7 @@ it("update mysql rule target map", (done) => {
             if (err) return done(err);
             let result = getResponseData(res.text)
             console.log(res.text)
-            target.id = result.id
-            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", mysql_rule.id))
+            console.log(ruleRouters.updateTablemap.url.replace(":Id", mysql_request.sink_id))
             done();
         });
 })
@@ -234,8 +236,67 @@ it("list rule target", (done) => {
             console.log(err)
             if (err) return done(err);
             let result = getResponseData(res.text)
-            console.log(res.text)
+            console.log(result)
             console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", mysql_rule.id))
             done();
         });
 })
+
+it("delete rule target", (done) => {
+    console.log(ruleRouters.deleteRuleTarget.url.replace(":ruleId", mysql_rule.id).replace(":targetId", target.id))
+    request.delete(ruleRouters.deleteRuleTarget.url.replace(":ruleId", mysql_rule.id).replace(":targetId", target.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            done();
+        });
+})
+
+it("list rule target", (done) => {
+    request.get(ruleRouters.createRuleTarget.url.replace(":ruleId", mysql_rule.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            console.log(err)
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            console.log(ruleRouters.createRuleTarget.url.replace(":ruleId", mysql_rule.id))
+            done();
+        });
+})
+
+
+it("delete rule", (done) => {
+    request.delete(ruleRouters.delete.url.replace(":id", mysql_rule.id))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            done();
+        });
+});
+
+it("list rule", (done) => {
+    request.get(pagination(ruleRouters["list/query"].url))
+        .set("authorization", spiderMan.authorization)
+        .expect(200)
+        .end((err, res) => {
+            if (err) return done(err);
+            let result = getResponseData(res.text)
+            console.log(result)
+            expect(result.total).toBeDefined();
+            expect(result.data).toBeDefined();
+            done();
+        });
+});
+
+
+function pagination(url: string): string {
+    return `${url}?page_num=1&page_size=2&type=0`;
+}
