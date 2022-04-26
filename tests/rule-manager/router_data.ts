@@ -43,11 +43,11 @@ export const ruleRouters = {
     },
     "createRuleTarget": {
         "method": "post",
-        "url": `${prefix}/rules/:ruleId/targets`
+        "url": `${prefix}/rules/:ruleId/target`
     },
     "updateRuleTarget": {
         "method": "put",
-        "url": `${prefix}/rules/:ruleId/targets/:targetId`
+        "url": `${prefix}/rules/:ruleId/target/:targetId`
     },
     "testConnectionToKafka": {
         "method": "get",
@@ -55,11 +55,15 @@ export const ruleRouters = {
     },
     "ListRuleTarget": {
         "method": "get",
-        "url": `${prefix}/rules/:ruleId/targets`
+        "url": `${prefix}/rules/:ruleId/target`
     },
     "deleteRuleTarget": {
         "method": "delete",
-        "url": `${prefix}/rules/:ruleId/targets/:targetId`
+        "url": `${prefix}/rules/:ruleId/target/:targetId`
+    },
+    "updateTablemap": {
+        "method": "put",
+        "url": `${prefix}/sink/:Id/maps`
     },
     "errSubscribe": {
         "method": "post",
